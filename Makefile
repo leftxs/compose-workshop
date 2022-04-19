@@ -10,7 +10,7 @@ YELLOW=`tput setaf 3`
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: install-dev
-install-dev: venv ## Install dev setup/env
-	@echo "$(YELLOW)==> Installing dev envrionment$(RESET)"
+.PHONY: setup
+setup: ## Install setup/
+	@echo "$(YELLOW)==> Initialize setup$(RESET)"
 	@pre-commit install

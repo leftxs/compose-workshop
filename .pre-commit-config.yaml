@@ -46,5 +46,6 @@ repos:
         name: Compose
         description: Runs Compose Docker image
         language: docker_image
-        files: docker-compose.y[a]{0,1}ml$
-        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1 .
+        files: ^\docker-compose\.(ya?ml)$
+        #files: docker-compose.y[a]{0,1}ml$
+        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1

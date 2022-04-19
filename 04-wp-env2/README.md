@@ -8,7 +8,7 @@ Now, run `docker-compose --env-file .env-example up-d` from your project directo
 
 This runs docker-compose up in detached mode, pulls the needed Docker images, and starts the wordpress and database containers, as shown in the example below.
 
-Stop containers and remove volumes
+Stop containers and remove volumes:
 
 ```shell
 ➜ docker-compose stop

@@ -1,4 +1,4 @@
-# Example yeah yeah
+# Example
 services:
   db:
     image: mysql:8.0.28

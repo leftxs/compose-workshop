@@ -23,3 +23,8 @@ repos:
       description: Validate YAML files
     - id: mixed-line-ending
       args: ['--fix=lf']
+
+- repo: https://github.com/atlasense/commit-lint.git
+  rev: 0.0.3
+  hooks:
+    - id: compose-lint

@@ -1,4 +1,4 @@
-# Example foo
+# Example foo bar
 services:
   db:
     image: mysql:8.0.28

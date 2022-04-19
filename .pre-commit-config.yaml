@@ -28,6 +28,6 @@ repos:
   rev: 0.0.3
   hooks:
     - id: compose-lint
-      language: docker_image
-      entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
-      files: docker-compose.yaml
+      #language: docker_image
+      #entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
+      #files: docker-compose.yaml

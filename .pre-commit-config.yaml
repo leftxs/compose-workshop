@@ -48,4 +48,4 @@ repos:
         language: docker_image
         files: docker-compose\.(ya?ml)$
         #files: docker-compose.y[a]{0,1}ml$
-        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
+        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1 .

@@ -24,6 +24,7 @@ repos:
     - id: mixed-line-ending
       args: ['--fix=lf']
 
+
 # - repo: https://github.com/atlasense/commit-lint.git
 #   rev: 0.0.3
 #   hooks:
@@ -33,7 +34,19 @@ repos:
 #       #types: [yaml]
 #       files: docker-compose.*\.yaml$
 
-- repo: https://github.com/IamTheFij/docker-pre-commit
-  rev: v2.1.0
-  hooks:
-    - id: docker-compose-check
+# - repo: https://github.com/IamTheFij/docker-pre-commit
+#   rev: v2.1.0
+#   hooks:
+#     - id: docker-compose-check
+
+
+-   repo: local
+    hooks:
+      - id: compose-lint
+        name: Compose
+        description: Runs Compose Docker image
+        language: docker_image
+        files: docker-compose.y[a]{0,1}ml$
+        #types: ["markdown"]
+        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
+        #entry: --entrypoint /usr/local/bin/vale vtest:latest .

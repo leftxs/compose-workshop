@@ -1,10 +1,9 @@
 # Wordpess example
 
-With `env` setting in compose file and showcasing `depends_on`.
+With `env` settings in compose file and showcasing `depends_on`.
 
-Notes:
-
-The docker volumes db_data and wordpress_data persists updates made by WordPress to the database, as well as the installed themes and plugins. Learn more about docker volumes
+> Note:
+>The docker volumes db_data and wordpress_data persists updates made by WordPress to the database, as well as the installed themes and plugins.
 
 WordPress Multisite works only on ports 80 and 443.
 
@@ -25,3 +24,5 @@ Are you sure? [yN] y
 Removing wp          ... done
 Removing wp-mysql-db ... done
 ```
+
+Open your browser and go to http://http://localhost:8000/

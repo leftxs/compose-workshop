@@ -30,4 +30,4 @@ repos:
     - id: compose-lint
       #language: docker_image
       #entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
-      files: \.docker-compose.yaml
+      files: \.docker-compose.yaml$

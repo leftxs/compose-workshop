@@ -47,6 +47,4 @@ repos:
         description: Runs Compose Docker image
         language: docker_image
         files: docker-compose.y[a]{0,1}ml$
-        #types: ["markdown"]
-        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1
-        #entry: --entrypoint /usr/local/bin/vale vtest:latest .
+        entry: gcr.io/graceful-earth-112011/compose-lint:0.0.1 .

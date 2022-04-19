@@ -28,3 +28,4 @@ repos:
   rev: 0.0.3
   hooks:
     - id: compose-lint
+      files: \.docker-compose.yaml$

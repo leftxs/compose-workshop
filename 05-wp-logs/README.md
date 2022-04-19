@@ -41,10 +41,9 @@ docker-compose logs db
 
 For all services
 
-```
+``` shell
 docker-compose logs
 ```
-
 
 You can start Docker compose in detached mode and attach yourself to the logs of all container later.
 If you're done watching logs you can detach yourself from the logs output without shutting down your services.
@@ -54,14 +53,14 @@ Use `docker-compose logs -f -t` to attach yourself to the logs of all running se
 Use `Ctrl + z` or `Ctrl + c` to detach yourself from the log output without shutting down your running containers
 If you're interested in logs of a single container you can use the docker keyword instead:
 
-Use `docker logs -t -f <name-of-service>`
+Use `docker logs -t -f wordpress`
 
 Save the output
 To save the output to a file you add the following to your logs command:
 
 `docker-compose logs -f -t >> myDockerCompose.log`
 
-Unfortunately we need to run docker-compose logs separately from docker-compose run.
+<!-- Unfortunately we need to run docker-compose logs separately from docker-compose run.
 To get this to work reliably we need to suppress the docker-compose run exit status then redirect the log and exit with the right status.
 
 ```shell
@@ -70,5 +69,6 @@ set -euo pipefail
 docker-compose run app | tee app.log || failed=yes
 docker-compose logs --no-color > docker-compose.log
 [[ -z "${failed:-}" ]] || exit 1
-```
+``` -->
 
+Use docker-compose run to execute commands against a running service, and docker-compose up to spawn a new service

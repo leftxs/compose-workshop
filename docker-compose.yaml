@@ -1,0 +1,44 @@
+# Example file
+services:
+  db:
+    image: mysql:8.0.28
+    init: true
+    container_name: wp-mysql-db
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - wp-training
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    # image: wordpress:5.9.2
+    init: true
+    container_name: wp
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    networks:
+      - wp-training
+
+volumes:
+  db_data: {}
+  wordpress_data: {}
+
+networks:
+  wp-training:
+    driver: bridge

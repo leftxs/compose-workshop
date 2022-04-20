@@ -1,4 +1,4 @@
-# Example file yeah yeah yeah
+# Example pasta
 services:
   db:
     image: mysql:8.0.28
@@ -16,12 +16,12 @@ services:
       - wp-training
 
   wordpress:
-    depends_on:
-      - db
     image: wordpress:latest
-    # image: wordpress:5.9.2
     init: true
     container_name: wp
+    depends_on:
+      - db
+    # image: wordpress:5.9.2
     volumes:
       - wordpress_data:/var/www/html
     ports:

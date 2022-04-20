@@ -22,6 +22,7 @@ repos:
       name: Validate YAML files
       description: Validate YAML files
     - id: mixed-line-ending
+      name: Checking line endings
       args: ['--fix=lf']
 
 
@@ -43,7 +44,7 @@ repos:
 -   repo: local
     hooks:
       - id: compose-lint
-        name: Compose
+        name: Docker Compose Validation
         description: Runs Compose Docker image
         language: docker_image
         files: docker-compose

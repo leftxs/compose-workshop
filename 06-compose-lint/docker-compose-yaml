@@ -16,6 +16,7 @@ services:
       - wp-training
 
   wordpress:
+    #image: wordpress:latest
     image: wordpress:5.9.2
     init: true
     container_name: wp

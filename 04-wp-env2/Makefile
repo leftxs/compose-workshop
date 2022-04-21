@@ -13,7 +13,7 @@ help: ## This help message
 .PHONY: run
 run: ## Install setup/
 	@echo "$(YELLOW)==> Running Compose$(RESET)"
-	@docker-compose --env-file .env-example up-d
+	@docker-compose --env-file .env-example up -d
 
 .PHONY: stop
 stop:

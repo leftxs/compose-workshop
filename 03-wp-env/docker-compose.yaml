@@ -7,7 +7,7 @@ services:
     container_name: wp-mysql-db
     volumes:
       - db_data:/var/lib/mysql
-    restart: always
+    #restart: always
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
@@ -24,7 +24,7 @@ services:
       - wordpress_data:/var/www/html
     ports:
       - "8000:80"
-    restart: always
+    #restart: always
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
